@@ -7,7 +7,7 @@ const port = process.env.PORT || 80;   //for hosting app rums on this port
 const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect('mongodb://localhost/myBlog', { useNewUrlParser:true,  useUnifiedTopology: true  });
+    await mongoose.connect('mongodb+srv://saaaadmalik:Saadmalik01.@cluster0.tyey2.mongodb.net/webstack?retryWrites=true&w=majority', { useNewUrlParser:true,  useUnifiedTopology: true, useCreateIndex:true, useFindAndModify:false  });
 }
 // defining mongoose Schema
 const contactSchema = new mongoose.Schema({
