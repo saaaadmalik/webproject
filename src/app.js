@@ -49,9 +49,10 @@ app.post("/contact", (req,res)=>{
     
     var myData = new Contact(req.body)
     myData.save().then(()=>{
-        res.send("item saved successfully")
+        res.sendFile(path.join(__dirname, '../public/success.html'));
     }).catch(()=>{
-        res.status(404).send("item not saved")
+        res.status(404).sendFile(path.join(__dirname, '../public/oops.html'));
+        
     })
     
 })
